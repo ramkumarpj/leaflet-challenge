@@ -95,17 +95,26 @@ function createFeatures(features) {
     // Define a function that will run once for each feature
     // Give each feature a popup that describes the place and time
     function onEachFeature(feature, layer) {
-        layer.bindPopup(`<h3>${feature.properties.place}</h3><hr><p>${new Date(feature.properties.time)}</p>`)
+        
+        let depth = feature.geometry.coordinates[2];
+        let magnitude = feature.properties.mag;
+        let place = feature.properties.place;
+
+        layer.bindTooltip(`<h3>${place}</h3><hr><h4>Mag: ${magnitude}, Depth: ${depth}</h4>`);
     }
     // Alter the points to show a circle with color and size variance accoriding to the size and depth
     function pointToLayer(feature, latlng) {
+
+        let depth = feature.geometry.coordinates[2];
+        let magnitude = feature.properties.mag;
+
         return L.circleMarker(latlng, {
             weight: 1,
             fillOpacity: 0.75,
             opacity: 1,
             color: "grey",
-            fillColor: getColor(feature.geometry.coordinates[2]),
-            radius: feature.properties.mag * 2.5
+            fillColor: getColor(depth),
+            radius: magnitude * 2.5
         })
     }
 
