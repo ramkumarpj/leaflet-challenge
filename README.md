@@ -23,11 +23,6 @@ Create a legend that will provide context for your map data.
 * Leaflet-Part-1/static/js/logic.js - Java script file that contains logic to build the visualization
 * Leaflet-Part-1/static/css/style.css - CSS file that contains the style definitions
 * Images - This folder keeps the images used by the webpage
-  
-## Dashboard:
-
-https://ramkumarpj.github.io/leaflet-challenge/
-
 
 ## References
 Dataset created by the [United States Geological Survey](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
